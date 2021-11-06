@@ -4,13 +4,16 @@ import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ItemClick{
+
+    MyRecycleViewAdapter myAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        List<Country> countries = new ArrayList<>();
+        countries.add(new Country("Polska","Warszawa",312697,37.95,
+                "Europa", R.drawable.flag_of_poland));
+        countries.add(new Country("Niemcy","Berlin",357578,83.24,
+                "Europa", R.drawable.flag_of_germany ));
+        countries.add(new Country("Rosja","Moskwa",17130000,147.1,
+                "Europa - Azja", R.drawable.flag_of_russia ));
+        countries.add(new Country("Belize","Belmopan",22966,0.4,
+                "Ameryka Południowa", R.drawable.flag_of_belize));
+        countries.add(new Country("Tanzania","Dodoma",947300,59.73,
+                "Afryka", R.drawable.flag_of_tanzania ));
+
+        myAdapter = new MyRecycleViewAdapter(getApplicationContext(), countries);
+        myAdapter.setClickListiner(this);
+        myRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        myRecyclerView.setAdapter(myAdapter);
         // zadanie
         // napisz metodę która doda osobę do listy i wyświeli ją na ekranie
 
@@ -55,5 +74,12 @@ public class MainActivity extends AppCompatActivity {
 //        ArrayAdapter adapter = new ArrayAdapter(MainActivity.this,
 //                android.R.layout.simple_list_item_1, personList);
 //        lvPerson.setAdapter(adapter);
+    }
+
+    @Override
+    public void onItemClickListener(View view, int position) {
+        Toast.makeText(getApplicationContext(),
+                "Clik " + myAdapter.getItem(position).name,
+                Toast.LENGTH_LONG).show();
     }
 }

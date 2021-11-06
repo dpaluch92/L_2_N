@@ -7,13 +7,14 @@ public class Country {
     public int area;
     public double population;
     public String continent;
+    public int flag;
 
-
-    public Country(String n, String c, int a, double p, String co){
+    public Country(String n, String c, int a, double p, String co, int f){
         this.name = n;
         this.capital = c;
         this.area = a;
         this.population = p ;
         this.continent = co;
+        this.flag = f;
     }
 }
