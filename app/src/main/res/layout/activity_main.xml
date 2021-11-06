@@ -10,6 +10,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+        <!--
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,15 +28,21 @@
         <TextView
                 android:text="@string/tv_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView"/>
+                android:layout_height="wrap_content" android:id="@+id/textView"/> -->
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="8"/>
         <Button
                 android:text="@string/b_save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/bSave"/>
-        <ListView
+                android:id="@+id/bSave"
+                android:layout_weight="2"/>
+        <!-- <ListView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/lvPersonList"/>
+                android:id="@+id/lvPersonList"/> -->
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
