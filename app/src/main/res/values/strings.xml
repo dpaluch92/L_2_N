@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">L_2_N</string>
-    <string name="name"> Imię </string>
-    <string name="last_name"> Nazwisko </string>
-    <string name="b_save"> Zapisz </string>
-    <string name="tv_name"> Podaj Imie i Nazwisko </string>
+    <string name="name">Imię</string>
+    <string name="last_name">Nazwisko</string>
+    <string name="b_save">Zapisz</string>
+    <string name="tv_name">Podaj Imie i Nazwisko</string>
 </resources>

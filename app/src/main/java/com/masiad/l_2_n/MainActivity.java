@@ -1,5 +1,6 @@
 package com.masiad.l_2_n;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
@@ -81,5 +82,7 @@ public class MainActivity extends AppCompatActivity implements ItemClick{
         Toast.makeText(getApplicationContext(),
                 "Clik " + myAdapter.getItem(position).name,
                 Toast.LENGTH_LONG).show();
+        Intent nextIntent = new Intent(this, CountryInfoActivity.class);
+        startActivity(nextIntent);
     }
 }
