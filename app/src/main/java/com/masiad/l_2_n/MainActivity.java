@@ -6,6 +6,7 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -60,9 +61,14 @@ public class MainActivity extends AppCompatActivity implements ItemClick{
         countries.add(new Country("Tanzania","Dodoma",947300,59.73,
                 "Afryka", R.drawable.flag_of_tanzania ));
 
+
         myAdapter = new MyRecycleViewAdapter(getApplicationContext(), countries);
         myAdapter.setClickListiner(this);
-        myRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        // fragment kodu odpowiadającego za generowanie kafelek na ekranie
+//        myRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        // fragment kodu odpowiadającego za generowanie listy na ekranie
+        myRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         myRecyclerView.setAdapter(myAdapter);
         // zadanie
         // napisz metodę która doda osobę do listy i wyświeli ją na ekranie

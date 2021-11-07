@@ -27,7 +27,9 @@ public class MyRecycleViewAdapter
     @NonNull
     @Override
     public ViewHandel onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.item_grid_veiw, parent, false);
+//        View view = mInflater.inflate(R.layout.item_grid_veiw, parent, false);
+//        return new ViewHandel(view);
+        View view = mInflater.inflate(R.layout.item_list_view, parent, false);
         return new ViewHandel(view);
     }
 
