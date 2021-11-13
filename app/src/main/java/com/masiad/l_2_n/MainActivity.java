@@ -68,8 +68,9 @@ public class MainActivity extends AppCompatActivity implements ItemClick{
 //        myRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         // fragment kodu odpowiadającego za generowanie listy na ekranie
         myRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         myRecyclerView.setAdapter(myAdapter);
+
+
         // zadanie
         // napisz metodę która doda osobę do listy i wyświeli ją na ekranie
 
